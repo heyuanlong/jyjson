@@ -1,0 +1,53 @@
+1.
+char *p = new char[8];
+int k= sizeof(p);
+memset(p, 0, 8);//memset(p, 0, 9);delete就会失败
+delete p;
+cout<<k;
+
+2.
+含有指针的类，真的必须做好复制控制
+
+3.
+enum woenum{woa,wob,woc};
+enum woenum woshi;
+woshi=woc;
+woshi=0;//报错
+
+4.
+double d12=-12.36;
+int i12=-126456;
+stringstream ins;
+ins<<d12;
+ins<<"   ";
+ins<<i12;
+cout<<ins.str()<<endl;//-12.36   -126456
+
+
+char ppp[50]="-42002";
+istringstream inkk(ppp);
+inkk>>i12;//-42002
+
+int intcuo=5;
+ostringstream oo;
+oo<<"dsfdsf";
+oo<<intcuo;
+cout<<oo.str();//dsfdsf5
+
+5.
+string whaa("   sa6  56");
+for( i=0;i<whaa.length();++i)
+{
+	whaa.erase(i, 1);
+    i--;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+1.
+{
+  "a":1,
+  "b":"a' g,f'd[][{{}{}'f",
+  "c":["d,ed",2,{"a":1},[1,2],true,null],
+  "d":{"acc":1}
+}
+
+2.
+struct TypeValue:public Value
+{
+	int type;
+	void *vpoint;///这里的指针会放到其他类中的容器里
+	
+
+class ValueObj:public Value
+{
+public:
+	std::map<std::string ,TypeValue> mypair;
+
+	
+class ValueArr:public Value
+{
+public:
+	std::vector<TypeValue> vec;
+	
+3.
+TypeValue，ValueObj，ValueArr三者是互相包含的，TypeValue通过它的int type来知道保存的什么类型的值。
+
+4.根据逗号来分开处理，当然[]和{}的分开处理不一样，{}的是键值对，[]不是键值对是普通值+object+array
+
+5.使用了运算符重载和类型转换
+
+
